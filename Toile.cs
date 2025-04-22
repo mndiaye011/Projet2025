@@ -52,8 +52,8 @@ public class Toile
 
     public override string ToString()
     {
-        string luminosite = accepteForteLuminosite ? "Oui" : "Non";
-        string typeDeCouleurs = couleursChaudes ? "Oui" : "Non";
+        string luminosite = accepteForteLuminosite ? "oui" : "non";
+        string typeDeCouleurs = couleursChaudes ? "couleurs chaudes" : "couleurs froides";
         return $"Titre : {titre}, Largeur : {largeur} Hauteur : {hauteur} ,\nAccepte Forte Luminosite: {luminosite}, Couleurs Chaudes: {typeDeCouleurs} \n";
     }
 }

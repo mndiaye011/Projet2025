@@ -54,6 +54,6 @@ public class Toile
     {
         string luminosite = accepteForteLuminosite ? "oui" : "non";
         string typeDeCouleurs = couleursChaudes ? "couleurs chaudes" : "couleurs froides";
-        return $"Titre : {titre}, Largeur : {largeur} Hauteur : {hauteur} ,\nAccepte Forte Luminosite: {luminosite}, Couleurs Chaudes: {typeDeCouleurs} \n";
+        return $"Titre : {titre}, Largeur : {largeur} Hauteur : {hauteur} ,\nAccepte Forte Luminosite: {luminosite}, type de Couleurs: {typeDeCouleurs} \n";
     }
 }

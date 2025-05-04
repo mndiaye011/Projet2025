@@ -17,7 +17,7 @@ public class Mur
 
     public override string ToString()
     {
-        return $"type de couleurs: {couleursChaudes} \n";
+        return $"type de couleurs: {couleursChaudes}";
     }
 
 }

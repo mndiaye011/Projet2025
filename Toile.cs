@@ -26,33 +26,33 @@ public class Toile
             };
         }
     }
-    private bool accepteForteLuminosite;
+    private bool estLumineuse;
 
-    public bool AccepteForteLuminosite
+    public bool EstLumineuse
     {
-        get {return accepteForteLuminosite;}
-        set {accepteForteLuminosite = value;}
+        get {return estLumineuse;}
+        set {estLumineuse = value;}
     }
     private bool couleursChaudes;
 
-    private bool CouleursChaudes
+    public bool CouleursChaudes
     {
         get {return couleursChaudes;}
         set {couleursChaudes = value;}
     }
 
-    public Toile(string titre, double largeur, double hauteur, bool accepteForteLuminosite, bool couleursChaudes)
+    public Toile(string titre, double largeur, double hauteur, bool estLumineuse, bool couleursChaudes)
     {
         this.titre = titre;
         this.largeur = largeur;
         this.hauteur = hauteur;
-        this.accepteForteLuminosite = accepteForteLuminosite;
+        this.estLumineuse = estLumineuse;
         this.couleursChaudes = couleursChaudes;
     }
 
     public override string ToString()
     {
-        string luminosite = accepteForteLuminosite ? "oui" : "non";
+        string luminosite = estLumineuse ? "oui" : "non";
         string typeDeCouleurs = couleursChaudes ? "couleurs chaudes" : "couleurs froides";
         return $"Titre : {titre}, Largeur : {largeur} Hauteur : {hauteur} ,\nAccepte Forte Luminosite: {luminosite}, type de Couleurs: {typeDeCouleurs} \n";
     }

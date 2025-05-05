@@ -20,6 +20,26 @@ public class Musee
     }
 
 
+    public Chambre? ChambreAppropriée(bool luminosite, bool couleursChaudes)
+    {
+        foreach (Chambre chambre in Chambres)
+        {
+            if (chambre.EstLumineuse == luminosite )
+            {
+                foreach (Mur mur in chambre.Murs)
+                {
+                    if (mur.CouleursChaudes == couleursChaudes)
+                    {
+                        return chambre;
+                    }
+                }
+              
+            }
+        }
+        return null; 
+    }
+   
+
     public override string ToString()
     {
         string result = $"Nom du musée: {nom}\n Nombre de chambres:{chambres.Count} \nChambres:\n";
@@ -29,5 +49,7 @@ public class Musee
         }
         return result;
     }
+
+
 
 }

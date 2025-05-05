@@ -1,15 +1,15 @@
 public class Mur
 {
-    private string couleursChaudes;
+    private bool couleursChaudes;
 
 
-    public string CouleursChaudes
+    public bool CouleursChaudes
     {
         get {return couleursChaudes;}
         set {couleursChaudes = value;}
     }
 
-    public Mur (string couleursChaudes)
+    public Mur (bool couleursChaudes)
     {
         this.couleursChaudes = couleursChaudes;
         
@@ -17,7 +17,9 @@ public class Mur
 
     public override string ToString()
     {
-        return $"type de couleurs: {couleursChaudes}";
+        string couleurs = couleursChaudes ? "couleurs chaudes" : "couleurs froides"; 
+
+        return $"Chaleur de couleurs: {couleurs}";
     }
 
 }

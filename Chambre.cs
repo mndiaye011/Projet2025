@@ -1,14 +1,19 @@
 public class Chambre
 {
 
-    private string Nom { get; set; }
-    private bool luminosite;
+    private string nom { get; set; }
+    public string Nom
+    {
+        get { return nom; }
+        set { nom = value; }
+    }
+    private bool estLumineuse;
 
-    public bool Luminosite
+    public bool EstLumineuse
     {
         
-        get { return luminosite; }
-        set { luminosite = value; }
+        get { return estLumineuse; }
+        set { estLumineuse = value; }
     }
 
     private bool couleurs;
@@ -34,8 +39,8 @@ public class Chambre
         {
             throw new ArgumentException("Une chambre doit avoir au moins 4 murs.");
         }
-        this.Nom = Nom;
-        this.Luminosite = luminosite;
+        this.nom = Nom;
+        this.EstLumineuse = luminosite;
         this.couleurs = couleurs;
         this.murs = murs;
     }
@@ -43,7 +48,7 @@ public class Chambre
     public override string ToString()
     {
     
-        string luminosite = Luminosite ? "lumineuse" : "peu lumineuse"; 
+        string luminosite = EstLumineuse ? "lumineuse" : "peu lumineuse"; 
         string couleurs = Couleurs ? "couleurs chaudes" : "couleurs froides"; 
 
         return $"<<{Nom}>> {luminosite} et aux {couleurs}, Nombre de murs: {Murs.Count}"; 

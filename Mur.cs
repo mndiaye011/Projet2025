@@ -39,6 +39,24 @@ public class Mur
         return 0;
         
     }
+
+    public int zoneApproprieeBis(OeuvreDart oeuvre)
+    {
+        foreach (Zone zone in zones)
+        {
+            if ((zone is Crochet && oeuvre is Toile) || (zone is Vitrine && oeuvre is Antiquite))
+            {
+                if (zone.EstLibre && zone.Hauteur >= oeuvre.Hauteur + 80 && zone.Largeur >= oeuvre.Largeur + 80)
+                {
+                    return zone.id;
+                }
+            }
+           
+         
+        }
+        return 0;
+        
+    }
   
 
     public override string ToString()

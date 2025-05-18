@@ -1,4 +1,4 @@
-public class Zone
+public abstract class Zone
 {
     private bool estLibre;
 
@@ -13,7 +13,7 @@ public class Zone
     public int id
     {
         get; private set;
- }
+    }
 
     private double largeur;
     public double Largeur
@@ -50,7 +50,14 @@ public class Zone
         this.hauteur = hauteur;
         this.estLibre = true;
         this.id = ++lastId;
-        
+
     }
-    
+}
+
+
+
+public enum TypeZone
+{
+    Toile,
+    Antiquite
 }

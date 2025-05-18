@@ -1,62 +1,15 @@
-public class Toile
+public class Toile : OeuvreDart
 {
-    private string titre;
 
-    public string Titre
+    public TypeOeuvreDart TypeOeuvreDart { get; set; }
+    public Toile(string titre, double largeur, double hauteur, bool estLumineuse, bool couleursChaudes) : base(titre, largeur, hauteur, estLumineuse, couleursChaudes)
     {
-        get {return titre;} 
-        set {titre = value;}
-    }
-    private double largeur;
-    public double Largeur
-    {
-        get {return largeur;}
-        set {if (value > 0)
-            {
-                largeur = value;
-            };}
-    }
-
-    private double hauteur;
-
-    public double Hauteur
-    {
-        get {return hauteur;}
-        set {
-            if (value >0)
-            {
-                hauteur = value;
-            };
-        }
-    }
-    private bool estLumineuse;
-
-    public bool EstLumineuse
-    {
-        get {return estLumineuse;}
-        set {estLumineuse = value;}
-    }
-    private bool couleursChaudes;
-
-    public bool CouleursChaudes
-    {
-        get {return couleursChaudes;}
-        set {couleursChaudes = value;}
-    }
-
-    public Toile(string titre, double largeur, double hauteur, bool estLumineuse, bool couleursChaudes)
-    {
-        this.titre = titre;
-        this.largeur = largeur;
-        this.hauteur = hauteur;
-        this.estLumineuse = estLumineuse;
-        this.couleursChaudes = couleursChaudes;
+        TypeOeuvreDart = TypeOeuvreDart.Toile;
     }
 
     public override string ToString()
     {
-        string luminosite = estLumineuse ? "oui" : "non";
-        string typeDeCouleurs = couleursChaudes ? "couleurs chaudes" : "couleurs froides";
-        return $"Titre : {titre}, Largeur : {largeur} Hauteur : {hauteur} ,\nAccepte Forte Luminosite: {luminosite}, type de Couleurs: {typeDeCouleurs} \n";
+        return base.ToString() + " TypeOeuvreDart: " + TypeOeuvreDart;
     }
 }
+

@@ -3,21 +3,22 @@
 
 Toile toile1 = new Toile("MYBLUE", 33.5, 45.0, true, false);
 Toile toile2 = new Toile("MYRED", 25.0, 30.0, false, true);
-Toile toile3 = new Toile("MYGREEN", 20.0, 25.0, true, true);
-Toile toile4 = new Toile("MYYELLOW", 15.0, 20.0, false, false);
+Antiquite antiquite1 = new Antiquite("MYGREEN", 20.0, 25.0, true, true);
+Antiquite antiquite2 = new Antiquite("MYYELLOW", 15.0, 20.0, false, false);
 
 
-List<Toile> toiles = new List<Toile>();
-toiles.Add(toile1);
-toiles.Add(toile2);
-toiles.Add(toile3); 
-toiles.Add(toile4);
-toiles.Add(new Toile("MYBLACK", 10.0, 15.0, true, false));
+List<OeuvreDart> oeuvreDarts = new List<OeuvreDart>();
+oeuvreDarts.Add(toile1);
+oeuvreDarts.Add(toile2);
+oeuvreDarts.Add(antiquite1);
+oeuvreDarts.Add(antiquite2);
+
+oeuvreDarts.Add(new Toile("MYBLACK", 10.0, 15.0, true, false));
 
 
-foreach ( var toile in toiles)
+foreach ( var oeuvreDart in oeuvreDarts)
 {
-    Console.WriteLine($"{toile}");
+    Console.WriteLine($"{oeuvreDart}");
 }
 
 
@@ -31,10 +32,10 @@ Mur mur4 = new Mur(false);
 */
 
 
-Mur mur1 = new Mur(false, new List<Zone> { new Zone(2.0, 3.0), new Zone(150, 200), new Zone(20, 30) });  
-Mur mur2 = new Mur(false, new List<Zone> { new Zone(2.0, 3.0), new Zone(25, 35), new Zone(2.0, 3.0) });
-Mur mur3 = new Mur(false, new List<Zone> { new Zone(2.0, 3.0), new Zone(26, 30), new Zone(2.0, 3.0) });
-Mur mur4 = new Mur(false, new List<Zone> { new Zone(2.0, 3.0), new Zone(25, 36), new Zone(2.0, 3.0) });
+Mur mur1 = new Mur(false, new List<Zone> { new Crochet(2.0, 3.0), new Vitrine(20, 30), new Crochet(150, 200) });  
+Mur mur2 = new Mur(false, new List<Zone> { new Vitrine(2.0, 3.0), new Vitrine(25, 35), new Crochet(2.0, 3.0) });
+Mur mur3 = new Mur(false, new List<Zone> { new Crochet(2.0, 3.0), new Vitrine(26, 30), new Crochet(2.0, 3.0) });
+Mur mur4 = new Mur(false, new List<Zone> { new Vitrine(200.0, 300.0), new Crochet(25, 36), new Vitrine(20, 3.0) });
 
 
 Chambre printemps = new Chambre("Printemps", true, true, new List<Mur> { mur1, mur2, mur3, mur4 });   
@@ -88,3 +89,6 @@ Console.WriteLine(mur1.ToString());
 int zoneTrouvee = mur1.zoneAppropriee(toile1.Hauteur, toile1.Largeur);
 Console.WriteLine($"Zone trouvée pour la toile 1: {zoneTrouvee}");
 
+// Test de la méthode zoneApproprieeBis
+int zoneTrouveeBis = mur4.zoneApproprieeBis(antiquite2);
+Console.WriteLine($"Zone Bis trouvée pour l'antiquité 2: {zoneTrouveeBis}");

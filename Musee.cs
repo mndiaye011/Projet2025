@@ -24,17 +24,11 @@ public class Musee
     {
         foreach (Chambre chambre in Chambres)
         {
-            if (chambre.EstLumineuse == luminosite )
+            if (chambre.EstLumineuse == luminosite && chambre.Couleurs == couleursChaudes)
             {
-                foreach (Mur mur in chambre.Murs)
-                {
-                    if (mur.CouleursChaudes == couleursChaudes)
-                    {
-                        return chambre;
-                    }
-                }
-              
+                return chambre;
             }
+           
         }
         return null; 
     }

@@ -11,7 +11,10 @@ public class Toile
     public double Largeur
     {
         get {return largeur;}
-        set {largeur = value;}
+        set {if (value > 0)
+            {
+                largeur = value;
+            };}
     }
 
     private double hauteur;
